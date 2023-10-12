@@ -1,0 +1,276 @@
+@font-face {
+    font-family: 'DM Sans Regular';
+    src: url('./fonts/DMSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Open sans regular';
+    src: url('./fonts/OpenSans-Regular.ttf');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    scroll-behavior: smooth;
+    width: 1440px;
+    font-family: 'Open sans regular';
+    font-style: normal;
+    line-height: 24px;
+
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+header {
+    background-image: url('./img/header-poster.jpeg');
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+.header__fill {
+    background: rgba(17, 17, 17, 0.35);
+    width: 100%;
+    height: 100%;
+
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 104px 100px 98px;
+}
+
+.navigation__menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 27px;
+    color: white;
+    font-size: 16px;
+}
+
+
+/* .search img {
+    position: relative;
+} */
+
+.search-form {
+    display: inline-block;
+}
+
+.search-form-input {
+    width: 505px;
+    height: 24px;
+    padding: 6px 10px;
+    border: 2px solid #D1D5DB;
+    border-radius: 6px;
+    background: transparent;
+    color: white;
+}
+
+.search-form-btn {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    width: 28px;
+    height: 30px;
+    line-height: 28px;
+    border: none;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+}
+
+.description {
+    width: 404px;
+    padding-left: 98px;
+
+}
+
+
+.description__content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-start;
+}
+.description__content h2 {
+    color: #FFF;
+    font-size: 48px;
+    line-height: 56px;
+}
+
+.description__rating {
+    display: flex;
+    gap: 34px;
+}
+
+.description__rating1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    color: #FFF;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+}
+
+.description__rating2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    color: #FFF;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+}
+
+.description__content p {
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.description__btn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    margin-bottom: 175px;
+    background: #4338CA;
+    border: none;
+    border-radius: 6px;
+    color: #FFF;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.film,
+.serial,
+.cartoon,
+.actor {
+    margin: 0 98px;
+}
+
+.film__name,
+.serial__name,
+.cartoon__name,
+.actor__name {
+    padding-top: 70px;
+    padding-bottom: 44px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.film__name h1,
+.serial__name h1,
+.cartoon__name h1 {
+    color: #000;
+    font-size: 36px;
+}
+
+.film__name p,
+.serial__name p,
+.cartoon__name p,
+.actor__name p {
+    color: #4338CA;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.film__cards,
+.serial__cards,
+.cartoon__cards,
+.actor__cards {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+.film__card,
+.serial__card,
+.cartoon__card,
+.actor__card {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.film__card img,
+.serial__card img,
+.cartoon__card img,
+.actor__card img {
+    height: 370px;
+}
+
+.film__card h2,
+.serial__card h2,
+.cartoon__card h2,
+.actor__card h2 {
+    font-size: 18px;
+    font-weight: 700;
+
+}
+
+.film__rating img,
+.serial__rating img,
+.cartoon__rating img {
+    height: 17px;
+}
+
+.film__card p,
+.serial__card p,
+.cartoon__card p {
+    color: #9CA3AF;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.film__rating,
+.serial__rating,
+.cartoon__rating {
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.rating1,
+.rating2 {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}

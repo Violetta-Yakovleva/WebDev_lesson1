@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="shortcut icon" href="./favicon.webp" type="image/x-icon" />
+        <script src="./script.js"></script>
+        <title>X-Movie</title>
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="header__fill">
+                <nav class="navigation">
+                    <div class="navigation__logo">
+                        <img src="./img/nav-logo.svg" alt="Logo" />
+                    </div>
+
+                    <div class="navigation__search">
+                        <form action="#" class="search-form">
+                            <input
+                                type="search"
+                                class="search-form-input"
+                                placeholder="Что посмотрим сегодня?"
+                            />
+                            <button type="submit" class="search-form-btn">
+                                <img src="./img/search-icon.svg" alt="" />
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="navigation__menu">
+                        <p>Войти</p>
+                        <img src="./img/nav-menu.svg" alt="Menu" />
+                    </div>
+                </nav>
+
+                <section class="description">
+                    <div class="description__content">
+                        <h2>Всё везде и сразу</h2>
+                        <div class="description__rating">
+                            <div class="description__rating1">
+                                <img
+                                    src="./img/rating-logo-1.jpeg"
+                                    alt="IMDb"
+                                />
+                                <p>86.0 / 100</p>
+                            </div>
+                            <div class="description__rating2">
+                                <img
+                                    src="./img/rating-logo-2.png"
+                                    alt="Kinopoisk"
+                                />
+                                <p>97 %</p>
+                            </div>
+                        </div>
+                        <p>
+                            Судьба мультивселенной — в руках владелицы
+                            прачечной. Лучший фильм, режиссер и еще пять
+                            &laquo;Оскаров&raquo;
+                        </p>
+                        <button class="description__btn">
+                            <img src="./img/btn-play.svg" alt="Play" />
+                            ТРЕЙЛЕР
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </header>
+
+        <section class="film">
+            <div class="film__name">
+                <h1>Фильмы</h1>
+                <p>Больше фильмов &gt;</p>
+            </div>
+            <div class="film__cards">
+                <div class="film__card">
+                    <img src="./img/card-1.jpg" alt="The Green Mile" />
+                    <p>США,1999</p>
+                    <h2>Зеленая миля</h2>
+                    <div class="film__rating">
+                        <div class="rating1">
+                            <img src="./img/rating-logo-1.jpeg" alt="IMDb" />
+                            <p>86.0 / 100</p>
+                        </div>
+                        <div class="rating2">
+                            <img
+                                src="./img/rating-logo-2.jpeg"
+                                alt="Kinopoisk"
+                            />
+                            <p>97 %</p>
+                        </div>
+                    </div>
+                    <p>драма, фэнтези, криминал</p>
+                </div>
+
+                <div class="film__card">
+                    <img src="./img/card-2.jpeg" alt="Oppenheimer" />
+                    <p>США, Великобритания, 2023</p>
+                    <h2>Оппенгеймер</h2>
+                    <div class="film__rating">
+                        <div class="rating1">
+                            <img src="./img/rating-logo-1.jpeg" alt="IMDb" />
+                            <p>82.0 / 100</p>
+                        </div>
+                        <div class="rating2">
+                            <img
+                                src="./img/rating-logo-2.jpeg"
+                                alt="Kinopoisk"
+                            />
+                            <p>70 %</p>
+                        </div>
+                    </div>
+                    <p>биография, драма, история</p>
+                </div>
+
+                <div class="film__card">
+                    <img src="./img/card-3.jpeg" alt="Barbie" />
+                    <p>США, Великобритания, 2023</p>
+                    <h2>Барби</h2>
+                    <div class="film__rating">
+                        <div class="rating1">
+                            <img src="./img/rating-logo-1.jpeg" alt="IMDb" />
+                            <p>84.0 / 100</p>
+                        </div>
+                        <div class="rating2">
+                            <img
+                                src="./img/rating-logo-2.jpeg"
+                                alt="Kinopoisk"
+                            />
+                            <p>87 %</p>
+                        </div>
+                    </div>
+                    <p>комедия, приключения, фэнтези</p>
+                </div>
+
+                <div class="film__card">
+                    <img src="./img/card-4.jpeg" alt="LadyBag" />
+                    <p>Франция, 2023</p>
+                    <h2>Леди Баг и Супер-Кот: Пробуждение силы</h2>
+                    <div class="film__rating">
+                        <div class="rating1">
+                            <img src="./img/rating-logo-1.jpeg" alt="IMDb" />
+                            <p>78.0 / 100</p>
+                        </div>
+                        <div class="rating2">
+                            <img
+                                src="./img/rating-logo-2.jpeg"
+                                alt="Kinopoisk"
+                            />
+                            <p>94 %</p>
+                        </div>
+                    </div>
+                    <p>мультфильм, семейный, детский...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="serial">
+            <div class="serial__name">
+                <h1>Сериалы</h1>
+                <p>Больше сериалов &gt;</p>
+            </div>
+            <div class="serial__cards">
+                <div class="serial__card">
+                    <img src="./img/serial-1.jpeg" alt="Yellowstone" />
+                    <p>США, 2016 - ...</p>
+                    <h2>Йеллоустоун</h2>
+                    <div class="serial__rating">
+                        <div class="rating1">
+                            <img src="./img/rating-logo-1.jpeg" alt="IMDb" />
+                            <p>86.0 / 100</p>
+                        </div>
+                        <div class="rating2">
+                            <img
+                                src="./img/rating-logo-2.jpeg"
+                                alt="Kinopoisk"
+                            />
+                            <p>97 %</p>
+                        </div>
+                    </div>
+                    <p>драма, фэнтези, криминал</p>
+                </div>
+
+                <div class="serial__card">
+                    <img src="./img/serial-2.jpeg" alt="Daddy's daughters" />
+                    <p>Россия, 2007 - 2013</p>
+                    <h2>Папины дочки</h2>
+                    <div class="serial__rating">
+                        <div class="rating1">
+                            <img src="./img/rating-logo-1.jpeg" alt="IMDb" />
+                            <p>86.0 / 100</p>
+                        </div>
+                        <div class="rating2">
+                            <img
+                                src="./img/rating-logo-2.jpeg"
+                                alt="Kinopoisk"
+                            />
+                            <p>97 %</p>
+                        </div>
+                    </div>
+                    <p>комедия, семейный</p>
+                </div>
+
+                <div class="serial__card">
+                    <img src="./img/serial-3.jpeg" alt="Attack of the titans" />
+                    <p>Япония, 2013 - ...</p>
+                    <h2>Атака титанов</h2>
+                    <div class="serial__rating">
+                        <div class="rating1">
+                            <img src="./img/rating-logo-1.jpeg" alt="IMDb" />
+                            <p>86.0 / 100</p>
+                        </div>
+                        <div class="rating2">
+                            <img
+                                src="./img/rating-logo-2.jpeg"
+                                alt="Kinopoisk"
+                            />
+                            <p>97 %</p>
+                        </div>
+                    </div>
+                    <p>аниме, мультфильм, фантастика...</p>
+                </div>
+
+                <div class="serial__card">
+                    <img
+                        src="./img/serial-4.png"
+                        alt="Parks and recreation areas"
+                    />
+                    <p>США, 2009 - 2015</p>
+                    <h2>Парки и зоны отдыха</h2>
+                    <div class="serial__rating">
+                        <div class="rating1">
+                            <img src="./img/rating-logo-1.jpeg" alt="IMDb" />
+                            <p>86.0 / 100</p>
+                        </div>
+                        <div class="rating2">
+                            <img
+                                src="./img/rating-logo-2.jpeg"
+                                alt="Kinopoisk"
+                            />
+                            <p>97 %</p>
+                        </div>
+                    </div>
+                    <p>комедия</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cartoon">
+            <div class="cartoon__name">
+                <h1>Мультфильмы</h1>
+                <p>Больше мультфильмов &gt;</p>
+            </div>
+            <div class="cartoon__cards">
+                <div class="cartoon__card">
+                    <img src="./img/cartoon-1.jpeg" alt="Shrek" />
+                    <p>США, 2001</p>
+                    <h2>Шрэк</h2>
+                    <div class="cartoon__rating">
+                        <div class="rating1">
+                            <img src="./img/rating-logo-1.jpeg" alt="IMDb" />
+                            <p>84.0 / 100</p>
+                        </div>
+                        <div class="rating2">
+                            <img
+                                src="./img/rating-logo-2.jpeg"
+                                alt="Kinopoisk"
+                            />
+                            <p>75 %</p>
+                        </div>
+                    </div>
+                    <p>мультфильм, фантастика, комедия...</p>
+                </div>
+
+                <div class="cartoon__card">
+                    <img src="./img/cartoon-2.jpeg" alt="Masha and the Bear" />
+                    <p>Россия, 2009 - ...</p>
+                    <h2>Маша и медведь</h2>
+                    <div class="cartoon__rating">
+                        <div class="rating1">
+                            <img src="./img/rating-logo-1.jpeg" alt="IMDb" />
+                            <p>76.0 / 100</p>
+                        </div>
+                        <div class="rating2">
+                            <img
+                                src="./img/rating-logo-2.jpeg"
+                                alt="Kinopoisk"
+                            />
+                            <p>68 %</p>
+                        </div>
+                    </div>
+                    <p>мультфильм, комедия</p>
+                </div>
+
+                <div class="cartoon__card">
+                    <img src="./img/cartoon-3.jpeg" alt="Soul" />
+                    <p>США, Япония, 2020</p>
+                    <h2>Душа</h2>
+                    <div class="cartoon__rating">
+                        <div class="rating1">
+                            <img src="./img/rating-logo-1.jpeg" alt="IMDb" />
+                            <p>79.0 / 100</p>
+                        </div>
+                        <div class="rating2">
+                            <img
+                                src="./img/rating-logo-2.jpeg"
+                                alt="Kinopoisk"
+                            />
+                            <p>71 %</p>
+                        </div>
+                    </div>
+                    <p>мультфильм, драма, приключения...</p>
+                </div>
+
+                <div class="cartoon__card">
+                    <img
+                        src="./img/cartoon-4.jpeg"
+                        alt="Red Shoes and the Seven Dwarfs"
+                    />
+                    <p>Корея Южная, 2019</p>
+                    <h2>Красные туфельки и семь гномов</h2>
+                    <div class="cartoon__rating">
+                        <div class="rating1">
+                            <img src="./img/rating-logo-1.jpeg" alt="IMDb" />
+                            <p>61.0 / 100</p>
+                        </div>
+                        <div class="rating2">
+                            <img
+                                src="./img/rating-logo-2.jpeg"
+                                alt="Kinopoisk"
+                            />
+                            <p>46 %</p>
+                        </div>
+                    </div>
+                    <p>мультфильм, фэнтези, комедия...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="actor">
+            <div class="actor__name">
+                <h1>Люди в кино</h1>
+                <p>Больше фильмов &gt;</p>
+            </div>
+            <div class="actor__cards">
+                <div class="actor__card">
+                    <img src="./img/actor-1.jpeg" alt="Alexander Bashirov" />
+                    <h2>Александр Баширов</h2>
+                </div>
+
+                <div class="actor__card">
+                    <img src="./img/actor-2.jpeg" alt="Brad Pitt" />
+                    <h2>Брэд Питт</h2>
+                </div>
+
+                <div class="actor__card">
+                    <img src="./img/actor-3.jpeg" alt="Quentin Tarantino" />
+                    <h2>Квентин Тарантино</h2>
+                </div>
+
+                <div class="actor__card">
+                    <img src="./img/actor-4.jpeg" alt="Alexander Petrov" />
+                    <h2>Александр Петров</h2>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
