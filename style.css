@@ -1,13 +1,4 @@
-@font-face {
-    font-family: 'DM Sans Regular';
-    src: url('./fonts/DMSans-Regular.ttf');
-}
-
-@font-face {
-    font-family: 'Open sans regular';
-    src: url('./fonts/OpenSans-Regular.ttf');
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700 &display=swap');
 
 * {
     margin: 0;
@@ -19,10 +10,10 @@
 body {
     scroll-behavior: smooth;
     width: 1440px;
-    font-family: 'Open sans regular';
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
     font-style: normal;
-    line-height: 24px;
-
+    margin: auto;
 }
 
 img {
@@ -60,37 +51,43 @@ header {
     gap: 27px;
     color: white;
     font-size: 16px;
+    line-height: 24px;
 }
 
-
-/* .search img {
-    position: relative;
-} */
-
-.search-form {
-    display: inline-block;
-}
-
-.search-form-input {
-    width: 505px;
-    height: 24px;
-    padding: 6px 10px;
+form {
     border: 2px solid #D1D5DB;
-    border-radius: 6px;
+    padding: 6px 10px;
+    width: 525px;
     background: transparent;
-    color: white;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.search-form-btn {
-    position: absolute;
-    right: 2px;
-    top: 2px;
-    width: 28px;
-    height: 30px;
-    line-height: 28px;
+input[type="search"] {
     border: none;
     background: transparent;
-    text-align: left;
+    width: 480px;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+input::-webkit-input-placeholder {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+button[type="submit"] {
+    border: none;
+    text-transform: uppercase;
+    height: 16px;
+    background: transparent;
     cursor: pointer;
 }
 
@@ -99,7 +96,6 @@ header {
     padding-left: 98px;
 
 }
-
 
 .description__content {
     display: flex;
@@ -111,7 +107,7 @@ header {
 .description__content h2 {
     color: #FFF;
     font-size: 48px;
-    line-height: 56px;
+    line-height: 56px
 }
 
 .description__rating {
@@ -163,6 +159,7 @@ header {
     border-radius: 6px;
     color: #FFF;
     font-size: 14px;
+    line-height: 24px;
     text-transform: uppercase;
     cursor: pointer;
 }
@@ -234,27 +231,25 @@ header {
     height: 370px;
 }
 
+.film__card p,
+.serial__card p,
+.cartoon__card p {
+    font-size: 12px;
+    color: #9CA3AF;
+}
+
 .film__card h2,
 .serial__card h2,
 .cartoon__card h2,
 .actor__card h2 {
     font-size: 18px;
-    font-weight: 700;
-
+    color: #111827;
 }
 
 .film__rating img,
 .serial__rating img,
 .cartoon__rating img {
     height: 17px;
-}
-
-.film__card p,
-.serial__card p,
-.cartoon__card p {
-    color: #9CA3AF;
-    font-size: 12px;
-    font-weight: 700;
 }
 
 .film__rating,
@@ -273,4 +268,50 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+}
+
+.rating1 p,
+.rating2 p {
+    color: #111827;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+}
+
+.footer {
+    display: flex;
+    gap: 36px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 120px;
+    padding-bottom: 26px;
+}
+
+.logo {
+    display: flex;
+    gap: 48px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.links {
+    display: flex;
+    gap: 48px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.links a {
+    color: #111827;
+    font-size: 18px;
+}
+
+.x-page p {
+    text-align: center;
+    color: #6B7280;
+    font-size: 18px;
 }
