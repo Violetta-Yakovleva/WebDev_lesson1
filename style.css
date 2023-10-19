@@ -1,4 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700 &display=swap');
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('./fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-Medium';
+    src: url('./fonts/OpenSans-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('./fonts/OpenSans-Bold.ttf');
+}
 
 * {
     margin: 0;
@@ -9,11 +22,9 @@
 
 body {
     scroll-behavior: smooth;
-    width: 1440px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     font-style: normal;
-    margin: auto;
 }
 
 img {
@@ -21,20 +32,35 @@ img {
     display: block;
 }
 
+.conteiner {
+    width: 1440px;
+    margin: 0 auto;
+}
+
+.conteiner2 {
+    width: 1244px;
+    margin: 0 auto;
+}
+
 header {
-    background-image: url('./img/header-poster.jpeg');
-    background-position: top;
-    background-repeat: no-repeat;
     height: 600px;
+    z-index: 0;
+    position: relative;
+    margin: 0 auto;
 }
-.header__fill {
-    background: rgba(17, 17, 17, 0.35);
-    width: 100%;
-    height: 100%;
+
+.header__poster {
+    z-index: -1;
+    margin: 0 auto;
+    width: 1440px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    filter: brightness(65%);
 
 }
 
-.navigation {
+.header__page-menu {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -43,15 +69,17 @@ header {
     padding: 15px 104px 100px 98px;
 }
 
-.navigation__menu {
+.header__main-link {
     display: flex;
+    gap: 24px;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    gap: 27px;
-    color: white;
-    font-size: 16px;
-    line-height: 24px;
+}
+
+.header__main-link a {
+    color: #FFF;
+    font-size: 24px;
 }
 
 form {
@@ -67,7 +95,7 @@ form {
     align-items: center;
 }
 
-input[type="search"] {
+input[type="text"] {
     border: none;
     background: transparent;
     width: 480px;
@@ -75,12 +103,12 @@ input[type="search"] {
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
+    outline: none;
 }
 
-input::-webkit-input-placeholder {
+::placeholder {
     color: #ffffff;
     font-size: 16px;
-    font-weight: normal;
 }
 
 button[type="submit"] {
@@ -91,10 +119,29 @@ button[type="submit"] {
     cursor: pointer;
 }
 
+.header__left-bar {
+    display: flex;
+    gap: 27px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.header__input-link a {
+    color: #FFF;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.header__nav-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 .description {
     width: 404px;
     padding-left: 98px;
-
 }
 
 .description__content {
@@ -104,7 +151,8 @@ button[type="submit"] {
     gap: 16px;
     align-items: flex-start;
 }
-.description__content h2 {
+
+.description__content a {
     color: #FFF;
     font-size: 48px;
     line-height: 56px
@@ -164,12 +212,64 @@ button[type="submit"] {
     cursor: pointer;
 }
 
+
 .film,
 .serial,
 .cartoon,
 .actor {
-    margin: 0 98px;
+    margin: 70px 0;
 }
+
+.film__name-section,
+.serial__name-section,
+.cartoon__name-section,
+.actor__name-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 44px;
+}
+
+
+.film h2,
+.serial h2,
+.cartoon h2 {
+    color: #000;
+    font-size: 36px;
+
+}
+
+.film__left-bar,
+.serial__left-bar,
+.cartoon__left-bar,
+.actor__left-bar {
+    display: flex;
+    gap: 8px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.film__left-bar a,
+.serial__left-bar a,
+.cartoon__left-bar a,
+.actor__left-bar a {
+    color: #4338CA;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.film__left-bar img,
+.serial__left-bar img,
+.cartoon__left-bar img,
+.actor__left-bar img {
+    width: 20px;
+}
+
 
 .film__name,
 .serial__name,
@@ -185,30 +285,35 @@ button[type="submit"] {
 
 }
 
-.film__name h1,
-.serial__name h1,
-.cartoon__name h1 {
-    color: #000;
-    font-size: 36px;
-}
-
-.film__name p,
-.serial__name p,
-.cartoon__name p,
+.film__name a,
+.serial__name a,
+.cartoon__name a,
 .actor__name p {
     color: #4338CA;
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
 }
+.film__name img,
+.serial__name img,
+.cartoon__name img,
+.actor__name p {
+    width: 20px;
+    position: absolute;
+}
+
 
 .film__cards,
 .serial__cards,
 .cartoon__cards,
 .actor__cards {
-    display: inline-flex;
+    display: flex;
     align-items: flex-start;
     gap: 80px;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .film__card,
@@ -222,9 +327,38 @@ button[type="submit"] {
     align-content: center;
     align-items: flex-start;
     gap: 12px;
+
 }
 
-.film__card img,
+.film__poster-box {
+    position: relative;
+}
+
+.film__card-img,
+.serial__card-img {
+    height: 370px;
+    z-index: 0;
+}
+
+.like-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+    top: 16px;
+    bottom: 325px;
+    right: 16px;
+    left: 204px;
+    opacity: 70%;
+}
+
+.like-btn img {
+    width: 30px;
+    height: 30px;
+}
+
+
 .serial__card img,
 .cartoon__card img,
 .actor__card img {
@@ -238,10 +372,10 @@ button[type="submit"] {
     color: #9CA3AF;
 }
 
-.film__card h2,
-.serial__card h2,
-.cartoon__card h2,
-.actor__card h2 {
+.film__card a,
+.serial__card a,
+.cartoon__card a,
+.actor__card a {
     font-size: 18px;
     color: #111827;
 }
@@ -314,4 +448,171 @@ button[type="submit"] {
     text-align: center;
     color: #6B7280;
     font-size: 18px;
+}
+
+
+.dropbtn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd
+}
+
+.show {
+    display: block;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    width: 48px;
+    color: #6B7280;
+}
+
+
+/* Кнопка выпадающего списка */
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+/* Контейнер <div> - необходим для размещения выпадающего содержимого */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Ссылки внутри выпадающего списка */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Изменение цвета выпадающих ссылок при наведении курсора */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Показать выпадающее меню при наведении курсора */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
+.dropdown:hover .dropbtn {
+    background-color: transparent;
+}
+
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 5;
+    transition: all 0.5s ease 0s;
+}
+
+.popup.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup.open .popup__content {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.popup__area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.popup__body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+.popup__content {
+    background-color: #FFF;
+    color: #000;
+    max-width: 1000px;
+    padding: 30px;
+    position: relative;
+    transition: all 0.5s ease 0s;
+    opacity: 0;
+    transform: translate(0px, -100%);
+}
+.popup video {
+    max-width: 850px;
+}
+.popup__close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+}
+body.lock {
+    overflow: hidden
 }
