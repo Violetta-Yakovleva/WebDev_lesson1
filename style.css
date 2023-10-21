@@ -27,6 +27,12 @@ body {
     font-style: normal;
 }
 
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
 img {
     max-width: 100%;
     display: block;
@@ -194,7 +200,7 @@ button[type="submit"] {
     line-height: 18px;
 }
 
-.description__btn {
+.description__link {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -205,25 +211,26 @@ button[type="submit"] {
     background: #4338CA;
     border: none;
     border-radius: 6px;
-    color: #FFF;
-    font-size: 14px;
-    line-height: 24px;
-    text-transform: uppercase;
     cursor: pointer;
 }
 
+.description__link img {
+    height: 20px;
+    width: 20px;
+}
 
-.film,
-.serial,
-.cartoon,
-.actor {
+#description__a {
+    color: #FFF;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+
+.category {
     margin: 70px 0;
 }
 
-.film__name-section,
-.serial__name-section,
-.cartoon__name-section,
-.actor__name-section {
+.category__name-section {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -233,48 +240,34 @@ button[type="submit"] {
 }
 
 
-.film h2,
-.serial h2,
-.cartoon h2 {
+.category__name-section h2 {
     color: #000;
     font-size: 36px;
 
 }
 
-.film__left-bar,
-.serial__left-bar,
-.cartoon__left-bar,
-.actor__left-bar {
+.category__left-bar {
     display: flex;
     gap: 8px;
     flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: flex-end;
 }
 
-.film__left-bar a,
-.serial__left-bar a,
-.cartoon__left-bar a,
-.actor__left-bar a {
+.category__left-bar a {
     color: #4338CA;
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
 }
 
-.film__left-bar img,
-.serial__left-bar img,
-.cartoon__left-bar img,
-.actor__left-bar img {
+.category__left-bar img {
+    height: 20px;
     width: 20px;
 }
 
-
-.film__name,
-.serial__name,
-.cartoon__name,
-.actor__name {
+.category__name {
     padding-top: 70px;
     padding-bottom: 44px;
     display: flex;
@@ -285,28 +278,19 @@ button[type="submit"] {
 
 }
 
-.film__name a,
-.serial__name a,
-.cartoon__name a,
-.actor__name p {
+.category__name a {
     color: #4338CA;
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
 }
-.film__name img,
-.serial__name img,
-.cartoon__name img,
-.actor__name p {
+.category__name img {
     width: 20px;
     position: absolute;
 }
 
 
-.film__cards,
-.serial__cards,
-.cartoon__cards,
-.actor__cards {
+.category__cards {
     display: flex;
     align-items: flex-start;
     gap: 80px;
@@ -316,79 +300,48 @@ button[type="submit"] {
     justify-content: space-between;
 }
 
-.film__card,
-.serial__card,
-.cartoon__card,
-.actor__card {
+.category__card {
     width: 250px;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    align-items: flex-start;
-    gap: 12px;
-
 }
 
-.film__poster-box {
-    position: relative;
-}
 
-.film__card-img,
-.serial__card-img {
+.category__card-img {
     height: 370px;
     z-index: 0;
 }
 
-.like-btn {
+.category__like-btn {
     background-color: transparent;
     border: none;
     cursor: pointer;
     z-index: 1;
     position: absolute;
     top: 16px;
-    bottom: 325px;
-    right: 16px;
     left: 204px;
     opacity: 70%;
 }
 
-.like-btn img {
+.category__like-btn img {
     width: 30px;
     height: 30px;
 }
 
-
-.serial__card img,
-.cartoon__card img,
-.actor__card img {
-    height: 370px;
-}
-
-.film__card p,
-.serial__card p,
-.cartoon__card p {
+.category__card p {
     font-size: 12px;
     color: #9CA3AF;
 }
 
-.film__card a,
-.serial__card a,
-.cartoon__card a,
-.actor__card a {
+.category__card a {
     font-size: 18px;
     color: #111827;
 }
 
-.film__rating img,
-.serial__rating img,
-.cartoon__rating img {
+.category__rating img {
     height: 17px;
 }
 
-.film__rating,
-.serial__rating,
-.cartoon__rating {
+.category__rating {
     display: flex;
     width: 250px;
     justify-content: space-between;
@@ -487,15 +440,6 @@ button[type="submit"] {
     display: block;
 }
 
-.swiper {
-    width: 100%;
-    height: 100%;
-}
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
@@ -504,7 +448,7 @@ button[type="submit"] {
 }
 
 
-/* Кнопка выпадающего списка */
+/* ВЫПАДАЮЩЕЕ МЕНЮ */
 .dropbtn {
     background-color: transparent;
     color: white;
@@ -513,13 +457,13 @@ button[type="submit"] {
     border: none;
 }
 
-/* Контейнер <div> - необходим для размещения выпадающего содержимого */
+
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
-/* Выпадающее содержимое (скрыто по умолчанию) */
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -529,7 +473,6 @@ button[type="submit"] {
     z-index: 1;
 }
 
-/* Ссылки внутри выпадающего списка */
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
@@ -537,22 +480,19 @@ button[type="submit"] {
     display: block;
 }
 
-/* Изменение цвета выпадающих ссылок при наведении курсора */
 .dropdown-content a:hover {
     background-color: #ddd;
 }
 
-/* Показать выпадающее меню при наведении курсора */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
 .dropdown:hover .dropbtn {
     background-color: transparent;
 }
 
-
+/* МОДАЛЬНОЕ ОКНО - ПОПАП */
 .popup {
     position: fixed;
     width: 100%;
@@ -613,6 +553,118 @@ button[type="submit"] {
     text-decoration: none;
     color: #000;
 }
-body.lock {
-    overflow: hidden
+
+/* СВАЙПЕР */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* СЛАЙДЕР */
+
+.preloader {
+    background-color: #fff;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+}
+@keyframes ldio-po1ui9ltu3 {
+    0% {
+        transform: translate(12px, 80px) scale(0);
+    }
+    25% {
+        transform: translate(12px, 80px) scale(0);
+    }
+    50% {
+        transform: translate(12px, 80px) scale(1);
+    }
+    75% {
+        transform: translate(80px, 80px) scale(1);
+    }
+    100% {
+        transform: translate(148px, 80px) scale(1);
+    }
+}
+@keyframes ldio-po1ui9ltu3-r {
+    0% {
+        transform: translate(148px, 80px) scale(1): }
+    100% {
+        transform: translate(148px, 80px) scale(0);
+    }
+}
+@keyframes ldio-po1ui9ltu3-c {
+    0% {
+        background: #1d3f72
+    }
+    25% {
+        background: #71c2cc
+    }
+    50% {
+        background: #d8ebf9
+    }
+    75% {
+        background: #5699d2
+    }
+    100% {
+        background: #1d3f72
+    }
+}
+.ldio-po1ui9ltu3 div {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transform: translate(80px, 80px) scale(1);
+    background: #1d3f72;
+    animation: ldio-po1ui9ltu3 1s infinite cubic-bezier(0,0.5,0.5,1);
+}
+.ldio-po1ui9ltu3 div:nth-child(1) {
+    background: #5699d2;
+    transform: translate(148px, 80px) scale(1);
+    animation: ldio-po1ui9ltu3-r 0.25s infinite cubic-bezier(0,0.5,0.5,1), ldio-po1ui9ltu3-c 1s infinite step-start;
+}
+.ldio-po1ui9ltu3 div:nth-child(2) {
+    animation-delay: -0.25s;
+    background: #1d3f72;
+}
+.ldio-po1ui9ltu3 div:nth-child(3) {
+    animation-delay: -0.5s;
+    background: #5699d2;
+}
+.ldio-po1ui9ltu3 div:nth-child(4) {
+    animation-delay: -0.75s;
+    background: #d8ebf9;
+}
+.ldio-po1ui9ltu3 div:nth-child(5) {
+    animation-delay: -1s;
+    background: #71c2cc;
+}
+.loadingio-spinner-ellipsis-l2y0fk180m {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    overflow: hidden;
+    background: rgba(NaN, NaN, NaN, 0);
+}
+.ldio-po1ui9ltu3 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0; /* see note above */
+}
+.ldio-po1ui9ltu3 div {
+    box-sizing: content-box;
 }

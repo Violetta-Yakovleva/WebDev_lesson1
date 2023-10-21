@@ -1,15 +1,13 @@
+// СВАЙПЕР
+
 var swiper = new Swiper('.swiper', {
+    // loop: true,
     slidesPerView: 4,
     direction: getDirection(),
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
-    },
-    on: {
-        resize: function () {
-        swiper.changeDirection(getDirection());
-        },
-    },
+    }
     });
 
     function getDirection() {
@@ -20,6 +18,8 @@ var swiper = new Swiper('.swiper', {
     }
 
 
+
+// МОДАЛЬНОЕ ОКНО - ПОПАП
 
 const popupLinks = document.querySelectorAll(".popup-link");
 const body = document.querySelector(".body");
@@ -119,3 +119,18 @@ document.addEventListener("keydown", function (e) {
         popupClose(popupActive);
     }
 });
+
+
+
+// ЛОАДЕР
+window.onload = function() {
+
+    setTimeout(function() {
+
+        document.getElementById("preloader").style.display = "none";
+
+    }, 2000);
+
+};
+
+

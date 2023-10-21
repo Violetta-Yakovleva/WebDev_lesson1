@@ -4,16 +4,11 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Нужно ли у стилей css использовать preload -->
         <link rel="stylesheet" href="style.css" />
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
         />
-
-        <!-- <link rel="preload" href="./script.js" as="script" /> -->
-
-        <link rel="preload" href="./fonts/" as="font" />
         <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
 
         <meta property="og:title" content="X-Movie" />
@@ -35,6 +30,18 @@
     </head>
 
     <body>
+        <div id="preloader" class="preloader">
+            <div class="loadingio-spinner-ellipsis-l2y0fk180m">
+                <div class="ldio-po1ui9ltu3">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
         <div class="wrapper">
             <img
                 src="./img/header-poster.jpeg"
@@ -45,7 +52,7 @@
                 <div class="header__page-menu">
                     <div class="header__main-link">
                         <a href="#"
-                            ><img src="./img/nav-logo.png" alt="Main link"
+                            ><img src="./img/icon-xmovie.png" alt="Main link"
                         /></a>
                         <a href="#" class="1 lock-padding">Movie</a>
                     </div>
@@ -59,7 +66,7 @@
                             />
                             <button type="submit">
                                 <img
-                                    src="../img/search-icon.svg"
+                                    src="./img/icon-search.png"
                                     alt="Search button"
                                 />
                             </button>
@@ -74,7 +81,10 @@
                         <nav class="nav-menu">
                             <div class="dropdown">
                                 <button class="dropbtn">
-                                    <img src="./img/nav-menu.svg" alt="" />
+                                    <img
+                                        src="./img/icon-nav-menu.png"
+                                        alt="Navigation menu"
+                                    />
                                 </button>
                                 <div class="dropdown-content">
                                     <a
@@ -88,7 +98,8 @@
                                         >Lesson 1</a
                                     >
                                     <a
-                                        href="https://yakovleva.violetta.students.xpage.dev/front/lesson_2/"
+                                        href="https://github.com/Violetta-Yakovleva/WebDev_lesson2/blob/main/index.js"
+                                        target="_blank"
                                         >Lesson 2</a
                                     >
                                 </div>
@@ -102,10 +113,7 @@
                         <a href="#">Всё везде и сразу</a>
                         <div class="description__rating">
                             <div class="description__rating1">
-                                <img
-                                    src="./img/rating-logo-1.jpeg"
-                                    alt="IMDb"
-                                />
+                                <img src="./img/rating-logo-1.png" alt="IMDb" />
                                 <p>86.0 / 100</p>
                             </div>
                             <div class="description__rating2">
@@ -122,9 +130,12 @@
                             &laquo;Оскаров&raquo;
                         </p>
 
-                        <a href="#popup" class="popup-link description__btn"
+                        <a
+                            href="#popup"
+                            id="description__a"
+                            class="popup-link description__link"
                             ><img
-                                src="./img/btn-play.svg"
+                                src="./img/icon-play.png"
                                 alt="Play"
                             />ТРЕЙЛЕР</a
                         >
@@ -133,37 +144,40 @@
             </header>
 
             <main class="main conteiner">
-                <section class="film">
-                    <div class="film__name-section">
+                <section class="category">
+                    <div class="category__name-section conteiner2">
                         <h2>Фильмы</h2>
-                        <div class="film__left-bar">
+                        <div class="category__left-bar">
                             <a href="#">Больше фильмов </a>
-                            <img src="./img/left-chevron.png" alt="More" />
+                            <img
+                                src="./img/icon-chevron-to-right.png"
+                                alt="More"
+                            />
                         </div>
                     </div>
 
-                    <div class="film__cards swiper">
+                    <div class="category__cards swiper">
                         <div class="swiper-wrapper">
-                            <div class="film__card swiper-slide">
-                                <div class="film__poster-box">
+                            <div class="category__card swiper-slide">
+                                <div class="category__poster-box">
                                     <img
-                                        class="film__card-img"
+                                        class="category__card-img"
                                         src="./img/card-1.jpg"
-                                        alt="The Green Mile"
+                                        alt="Зеленая миля"
                                     />
-                                    <button class="like-btn">
+                                    <button class="category__like-btn">
                                         <img
-                                            src="./img/like-logo.png"
+                                            src="./img/icon-favorite.png"
                                             alt="Like logo"
                                         />
                                     </button>
                                 </div>
                                 <p>США,1999</p>
                                 <a href="#">Зеленая миля</a>
-                                <div class="film__rating">
+                                <div class="category__rating">
                                     <div class="rating1">
                                         <img
-                                            src="./img/rating-logo-1.jpeg"
+                                            src="./img/rating-logo-1.png"
                                             alt="IMDb"
                                         />
                                         <p>86.0 / 100</p>
@@ -179,26 +193,26 @@
                                 <p>драма, фэнтези, криминал</p>
                             </div>
 
-                            <div class="film__card swiper-slide">
-                                <div class="film__poster-box">
+                            <div class="category__card swiper-slide">
+                                <div class="category__poster-box">
                                     <img
-                                        class="film__card-img"
+                                        class="category__card-img"
                                         src="./img/card-2.jpeg"
                                         alt="Oppenheimer"
                                     />
-                                    <button class="like-btn">
+                                    <button class="category__like-btn">
                                         <img
-                                            src="./img/like-logo.png"
+                                            src="./img/icon-favorite.png"
                                             alt="Like logo"
                                         />
                                     </button>
                                 </div>
                                 <p>США, Великобритания, 2023</p>
                                 <a href="#">Оппенгеймер</a>
-                                <div class="film__rating">
+                                <div class="category__rating">
                                     <div class="rating1">
                                         <img
-                                            src="./img/rating-logo-1.jpeg"
+                                            src="./img/rating-logo-1.png"
                                             alt="IMDb"
                                         />
                                         <p>82.0 / 100</p>
@@ -214,26 +228,26 @@
                                 <p>биография, драма, история</p>
                             </div>
 
-                            <div class="film__card swiper-slide">
-                                <div class="film__poster-box">
+                            <div class="category__card swiper-slide">
+                                <div class="category__poster-box">
                                     <img
-                                        class="film__card-img"
+                                        class="category__card-img"
                                         src="./img/card-3.jpeg"
                                         alt="Barbie"
                                     />
-                                    <button class="like-btn">
+                                    <button class="category__like-btn">
                                         <img
-                                            src="./img/like-logo.png"
+                                            src="./img/icon-favorite.png"
                                             alt="Like logo"
                                         />
                                     </button>
                                 </div>
                                 <p>США, Великобритания, 2023</p>
                                 <a href="#">Барби</a>
-                                <div class="film__rating">
+                                <div class="category__rating">
                                     <div class="rating1">
                                         <img
-                                            src="./img/rating-logo-1.jpeg"
+                                            src="./img/rating-logo-1.png"
                                             alt="IMDb"
                                         />
                                         <p>84.0 / 100</p>
@@ -249,28 +263,29 @@
                                 <p>комедия, приключения, фэнтези</p>
                             </div>
 
-                            <div class="film__card swiper-slide">
-                                <div class="film__poster-box">
+                            <div class="category__card swiper-slide">
+                                <div class="category__poster-box">
                                     <img
-                                        class="film__card-img"
+                                        class="category__card-img"
                                         src="./img/card-4.jpeg"
                                         alt="LadyBag"
                                     />
-                                    <button class="like-btn">
+                                    <button class="category__like-btn">
                                         <img
-                                            src="./img/like-logo.png"
+                                            src="./img/icon-favorite.png"
                                             alt="Like logo"
                                         />
                                     </button>
                                 </div>
                                 <p>Франция, 2023</p>
                                 <a href="#"
-                                    >Леди Баг и Супер-Кот: Пробуждение силы</a
+                                    >Леди Баг и Супер-Кот: <br />Пробуждение
+                                    силы</a
                                 >
-                                <div class="film__rating">
+                                <div class="category__rating">
                                     <div class="rating1">
                                         <img
-                                            src="./img/rating-logo-1.jpeg"
+                                            src="./img/rating-logo-1.png"
                                             alt="IMDb"
                                         />
                                         <p>78.0 / 100</p>
@@ -286,26 +301,26 @@
                                 <p>мультфильм, семейный, детский...</p>
                             </div>
 
-                            <div class="film__card swiper-slide">
-                                <div class="film__poster-box">
+                            <div class="category__card swiper-slide">
+                                <div class="category__poster-box">
                                     <img
-                                        class="film__card-img"
+                                        class="category__card-img"
                                         src="./img/card-1.jpg"
                                         alt="The Green Mile"
                                     />
-                                    <button class="like-btn">
+                                    <button class="category__like-btn">
                                         <img
-                                            src="./img/like-logo.png"
+                                            src="./img/icon-favorite.png"
                                             alt="Like logo"
                                         />
                                     </button>
                                 </div>
                                 <p>США,1999</p>
                                 <a href="#">Зеленая миля</a>
-                                <div class="film__rating">
+                                <div class="category__rating">
                                     <div class="rating1">
                                         <img
-                                            src="./img/rating-logo-1.jpeg"
+                                            src="./img/rating-logo-1.png"
                                             alt="IMDb"
                                         />
                                         <p>86.0 / 100</p>
@@ -319,113 +334,6 @@
                                     </div>
                                 </div>
                                 <p>драма, фэнтези, криминал</p>
-                            </div>
-
-                            <div class="film__card swiper-slide">
-                                <div class="film__poster-box">
-                                    <img
-                                        class="film__card-img"
-                                        src="./img/card-2.jpeg"
-                                        alt="Oppenheimer"
-                                    />
-                                    <button class="like-btn">
-                                        <img
-                                            src="./img/like-logo.png"
-                                            alt="Like logo"
-                                        />
-                                    </button>
-                                </div>
-                                <p>США, Великобритания, 2023</p>
-                                <a href="#">Оппенгеймер</a>
-                                <div class="film__rating">
-                                    <div class="rating1">
-                                        <img
-                                            src="./img/rating-logo-1.jpeg"
-                                            alt="IMDb"
-                                        />
-                                        <p>82.0 / 100</p>
-                                    </div>
-                                    <div class="rating2">
-                                        <img
-                                            src="./img/rating-logo-2.png"
-                                            alt="Kinopoisk"
-                                        />
-                                        <p>70 %</p>
-                                    </div>
-                                </div>
-                                <p>биография, драма, история</p>
-                            </div>
-
-                            <div class="film__card swiper-slide">
-                                <div class="film__poster-box">
-                                    <img
-                                        class="film__card-img"
-                                        src="./img/card-3.jpeg"
-                                        alt="Barbie"
-                                    />
-                                    <button class="like-btn">
-                                        <img
-                                            src="./img/like-logo.png"
-                                            alt="Like logo"
-                                        />
-                                    </button>
-                                </div>
-                                <p>США, Великобритания, 2023</p>
-                                <a href="#">Барби</a>
-                                <div class="film__rating">
-                                    <div class="rating1">
-                                        <img
-                                            src="./img/rating-logo-1.jpeg"
-                                            alt="IMDb"
-                                        />
-                                        <p>84.0 / 100</p>
-                                    </div>
-                                    <div class="rating2">
-                                        <img
-                                            src="./img/rating-logo-2.png"
-                                            alt="Kinopoisk"
-                                        />
-                                        <p>87 %</p>
-                                    </div>
-                                </div>
-                                <p>комедия, приключения, фэнтези</p>
-                            </div>
-
-                            <div class="film__card swiper-slide">
-                                <div class="film__poster-box">
-                                    <img
-                                        class="film__card-img"
-                                        src="./img/card-4.jpeg"
-                                        alt="LadyBag"
-                                    />
-                                    <button class="like-btn">
-                                        <img
-                                            src="./img/like-logo.png"
-                                            alt="Like logo"
-                                        />
-                                    </button>
-                                </div>
-                                <p>Франция, 2023</p>
-                                <a href="#"
-                                    >Леди Баг и Супер-Кот: Пробуждение силы</a
-                                >
-                                <div class="film__rating">
-                                    <div class="rating1">
-                                        <img
-                                            src="./img/rating-logo-1.jpeg"
-                                            alt="IMDb"
-                                        />
-                                        <p>78.0 / 100</p>
-                                    </div>
-                                    <div class="rating2">
-                                        <img
-                                            src="./img/rating-logo-2.png"
-                                            alt="Kinopoisk"
-                                        />
-                                        <p>94 %</p>
-                                    </div>
-                                </div>
-                                <p>мультфильм, семейный, детский...</p>
                             </div>
                         </div>
                         <div class="swiper-button-prev"></div>
@@ -433,264 +341,193 @@
                     </div>
                 </section>
 
-                <section class="serial">
-                    <div class="serial__name-section">
+                <section class="category">
+                    <div class="category__name-section conteiner2">
                         <h2>Сериалы</h2>
-                        <div class="serial__left-bar">
+                        <div class="category__left-bar">
                             <a href="#">Больше сериалов </a>
-                            <img src="./img/left-chevron.png" alt="More" />
+                            <img
+                                src="./img/icon-chevron-to-right.png"
+                                alt="More"
+                            />
                         </div>
                     </div>
 
-                    <div class="serial__cards swiper">
+                    <div class="category__cards swiper">
                         <div class="swiper-wrapper">
-                            <div class="serial__card swiper-slide">
-                                <img
-                                    src="./img/serial-1.jpeg"
-                                    alt="Yellowstone"
-                                />
-                                <button class="like-btn">
+                            <div class="category__card swiper-slide">
+                                <div class="category__poster-box">
                                     <img
-                                        src="./img/like-logo.png"
-                                        alt="Like logo"
+                                        class="category__card-img"
+                                        src="./img/serial-1.jpeg"
+                                        alt="Йеллоустоун"
                                     />
-                                </button>
-                                <p>США, 2016 - ...</p>
+                                    <button class="category__like-btn">
+                                        <img
+                                            src="./img/icon-favorite.png"
+                                            alt="Like logo"
+                                        />
+                                    </button>
+                                </div>
+                                <p>США,2016 - ...</p>
                                 <a href="#">Йеллоустоун</a>
-                                <div class="serial__rating">
+                                <div class="category__rating">
                                     <div class="rating1">
                                         <img
-                                            src="./img/rating-logo-1.jpeg"
+                                            src="./img/rating-logo-1.png"
                                             alt="IMDb"
                                         />
-                                        <p>86.0 / 100</p>
+                                        <p>84.0 / 100</p>
                                     </div>
                                     <div class="rating2">
                                         <img
                                             src="./img/rating-logo-2.png"
                                             alt="Kinopoisk"
                                         />
-                                        <p>97 %</p>
+                                        <p>75 %</p>
                                     </div>
                                 </div>
-                                <p>драма, фэнтези, криминал</p>
+                                <p>драма, вестерн</p>
                             </div>
-                            <div class="serial__card swiper-slide">
-                                <img
-                                    src="./img/serial-2.jpeg"
-                                    alt="Daddy's daughters"
-                                />
-                                <button class="like-btn">
+
+                            <div class="category__card swiper-slide">
+                                <div class="category__poster-box">
                                     <img
-                                        src="./img/like-logo.png"
-                                        alt="Like logo"
+                                        class="category__card-img"
+                                        src="./img/serial-2.jpeg"
+                                        alt="Папины дочки"
                                     />
-                                </button>
+                                    <button class="category__like-btn">
+                                        <img
+                                            src="./img/icon-favorite.png"
+                                            alt="Like logo"
+                                        />
+                                    </button>
+                                </div>
                                 <p>Россия, 2007 - 2013</p>
                                 <a href="#">Папины дочки</a>
-                                <div class="serial__rating">
+                                <div class="category__rating">
                                     <div class="rating1">
                                         <img
-                                            src="./img/rating-logo-1.jpeg"
+                                            src="./img/rating-logo-1.png"
                                             alt="IMDb"
                                         />
-                                        <p>86.0 / 100</p>
+                                        <p>76.0 / 100</p>
                                     </div>
                                     <div class="rating2">
                                         <img
                                             src="./img/rating-logo-2.png"
                                             alt="Kinopoisk"
                                         />
-                                        <p>97 %</p>
+                                        <p>68 %</p>
                                     </div>
                                 </div>
                                 <p>комедия, семейный</p>
                             </div>
-                            <div class="serial__card swiper-slide">
-                                <img
-                                    src="./img/serial-3.jpeg"
-                                    alt="Attack of the titans"
-                                />
-                                <button class="like-btn">
+
+                            <div class="category__card swiper-slide">
+                                <div class="category__poster-box">
                                     <img
-                                        src="./img/like-logo.png"
-                                        alt="Like logo"
+                                        class="category__card-img"
+                                        src="./img/serial-3.jpeg"
+                                        alt="Атака титанов"
                                     />
-                                </button>
-                                <p>Япония, 2013 - ...</p>
+                                    <button class="category__like-btn">
+                                        <img
+                                            src="./img/icon-favorite.png"
+                                            alt="Like logo"
+                                        />
+                                    </button>
+                                </div>
+                                <p>Япони, 2013 - ...</p>
                                 <a href="#">Атака титанов</a>
-                                <div class="serial__rating">
+                                <div class="category__rating">
                                     <div class="rating1">
                                         <img
-                                            src="./img/rating-logo-1.jpeg"
+                                            src="./img/rating-logo-1.png"
                                             alt="IMDb"
                                         />
-                                        <p>86.0 / 100</p>
+                                        <p>79.0 / 100</p>
                                     </div>
                                     <div class="rating2">
                                         <img
                                             src="./img/rating-logo-2.png"
                                             alt="Kinopoisk"
                                         />
-                                        <p>97 %</p>
+                                        <p>71 %</p>
                                     </div>
                                 </div>
                                 <p>аниме, мультфильм, фантастика...</p>
                             </div>
-                            <div class="serial__card swiper-slide">
-                                <img
-                                    src="./img/serial-4.png"
-                                    alt="Parks and recreation areas"
-                                />
-                                <button class="like-btn">
+
+                            <div class="category__card swiper-slide">
+                                <div class="category__poster-box">
                                     <img
-                                        src="./img/like-logo.png"
-                                        alt="Like logo"
+                                        class="category__card-img"
+                                        src="./img/serial-4.jpeg"
+                                        alt="Парки и зоны отдыха"
                                     />
-                                </button>
-                                <p>США, 2009 - 2015</p>
-                                <a href="#">Парки и зоны отдыхa</a>
-                                <div class="serial__rating">
+                                    <button class="category__like-btn">
+                                        <img
+                                            src="./img/icon-favorite.png"
+                                            alt="Like logo"
+                                        />
+                                    </button>
+                                </div>
+                                <p>США, 2009 - 2016</p>
+                                <a href="#">Парки и зоны отдыха</a>
+                                <div class="category__rating">
                                     <div class="rating1">
                                         <img
-                                            src="./img/rating-logo-1.jpeg"
+                                            src="./img/rating-logo-1.png"
                                             alt="IMDb"
                                         />
-                                        <p>86.0 / 100</p>
+                                        <p>61.0 / 100</p>
                                     </div>
                                     <div class="rating2">
                                         <img
                                             src="./img/rating-logo-2.png"
                                             alt="Kinopoisk"
                                         />
-                                        <p>97 %</p>
+                                        <p>46 %</p>
                                     </div>
                                 </div>
                                 <p>комедия</p>
                             </div>
-                            <div class="serial__card swiper-slide">
-                                <img
-                                    src="./img/serial-1.jpeg"
-                                    alt="Yellowstone"
-                                />
-                                <button class="like-btn">
+
+                            <div class="category__card swiper-slide">
+                                <div class="category__poster-box">
                                     <img
-                                        src="./img/like-logo.png"
-                                        alt="Like logo"
+                                        class="category__card-img"
+                                        src="./img/serial-1.jpeg"
+                                        alt="Йеллоустоун"
                                     />
-                                </button>
-                                <p>США, 2016 - ...</p>
+                                    <button class="category__like-btn">
+                                        <img
+                                            src="./img/icon-favorite.png"
+                                            alt="Like logo"
+                                        />
+                                    </button>
+                                </div>
+                                <p>США,2016 - ...</p>
                                 <a href="#">Йеллоустоун</a>
-                                <div class="serial__rating">
+                                <div class="category__rating">
                                     <div class="rating1">
                                         <img
-                                            src="./img/rating-logo-1.jpeg"
+                                            src="./img/rating-logo-1.png"
                                             alt="IMDb"
                                         />
-                                        <p>86.0 / 100</p>
+                                        <p>84.0 / 100</p>
                                     </div>
                                     <div class="rating2">
                                         <img
                                             src="./img/rating-logo-2.png"
                                             alt="Kinopoisk"
                                         />
-                                        <p>97 %</p>
+                                        <p>75 %</p>
                                     </div>
                                 </div>
-                                <p>драма, фэнтези, криминал</p>
-                            </div>
-                            <div class="serial__card swiper-slide">
-                                <img
-                                    src="./img/serial-2.jpeg"
-                                    alt="Daddy's daughters"
-                                />
-                                <button class="like-btn">
-                                    <img
-                                        src="./img/like-logo.png"
-                                        alt="Like logo"
-                                    />
-                                </button>
-                                <p>Россия, 2007 - 2013</p>
-                                <a href="#">Папины дочки</a>
-                                <div class="serial__rating">
-                                    <div class="rating1">
-                                        <img
-                                            src="./img/rating-logo-1.jpeg"
-                                            alt="IMDb"
-                                        />
-                                        <p>86.0 / 100</p>
-                                    </div>
-                                    <div class="rating2">
-                                        <img
-                                            src="./img/rating-logo-2.png"
-                                            alt="Kinopoisk"
-                                        />
-                                        <p>97 %</p>
-                                    </div>
-                                </div>
-                                <p>комедия, семейный</p>
-                            </div>
-                            <div class="serial__card swiper-slide">
-                                <img
-                                    src="./img/serial-3.jpeg"
-                                    alt="Attack of the titans"
-                                />
-                                <button class="like-btn">
-                                    <img
-                                        src="./img/like-logo.png"
-                                        alt="Like logo"
-                                    />
-                                </button>
-                                <p>Япония, 2013 - ...</p>
-                                <a href="#">Атака титанов</a>
-                                <div class="serial__rating">
-                                    <div class="rating1">
-                                        <img
-                                            src="./img/rating-logo-1.jpeg"
-                                            alt="IMDb"
-                                        />
-                                        <p>86.0 / 100</p>
-                                    </div>
-                                    <div class="rating2">
-                                        <img
-                                            src="./img/rating-logo-2.png"
-                                            alt="Kinopoisk"
-                                        />
-                                        <p>97 %</p>
-                                    </div>
-                                </div>
-                                <p>аниме, мультфильм, фантастика...</p>
-                            </div>
-                            <div class="serial__card swiper-slide">
-                                <img
-                                    src="./img/serial-4.png"
-                                    alt="Parks and recreation areas"
-                                />
-                                <button class="like-btn">
-                                    <img
-                                        src="./img/like-logo.png"
-                                        alt="Like logo"
-                                    />
-                                </button>
-                                <p>США, 2009 - 2015</p>
-                                <a href="#">Парки и зоны отдыхa</a>
-                                <div class="serial__rating">
-                                    <div class="rating1">
-                                        <img
-                                            src="./img/rating-logo-1.jpeg"
-                                            alt="IMDb"
-                                        />
-                                        <p>86.0 / 100</p>
-                                    </div>
-                                    <div class="rating2">
-                                        <img
-                                            src="./img/rating-logo-2.png"
-                                            alt="Kinopoisk"
-                                        />
-                                        <p>97 %</p>
-                                    </div>
-                                </div>
-                                <p>комедия</p>
+                                <p>драма, вестерн</p>
                             </div>
                         </div>
                         <div class="swiper-button-prev"></div>
@@ -698,31 +535,40 @@
                     </div>
                 </section>
 
-                <section class="cartoon">
-                    <div class="cartoon__name-section">
+                <section class="category">
+                    <div class="category__name-section conteiner2">
                         <h2>Мультфильмы</h2>
-                        <div class="cartoon__left-bar">
+                        <div class="category__left-bar">
                             <a href="#">Больше мультфильмов </a>
-                            <img src="./img/left-chevron.png" alt="More" />
+                            <img
+                                src="./img/icon-chevron-to-right.png"
+                                alt="More"
+                            />
                         </div>
                     </div>
 
-                    <div class="cartoon__cards swiper">
+                    <div class="category__cards swiper">
                         <div class="swiper-wrapper">
-                            <div class="cartoon__card swiper-slide">
-                                <img src="./img/cartoon-1.jpeg" alt="Shrek" />
-                                <button class="like-btn">
+                            <div class="category__card swiper-slide">
+                                <div class="category__poster-box">
                                     <img
-                                        src="./img/like-logo.png"
-                                        alt="Like logo"
+                                        class="category__card-img"
+                                        src="./img/cartoon-1.jpeg"
+                                        alt="Шрэк"
                                     />
-                                </button>
+                                    <button class="category__like-btn">
+                                        <img
+                                            src="./img/icon-favorite.png"
+                                            alt="Like logo"
+                                        />
+                                    </button>
+                                </div>
                                 <p>США, 2001</p>
                                 <a href="#">Шрэк</a>
-                                <div class="cartoon__rating">
+                                <div class="category__rating">
                                     <div class="rating1">
                                         <img
-                                            src="./img/rating-logo-1.jpeg"
+                                            src="./img/rating-logo-1.png"
                                             alt="IMDb"
                                         />
                                         <p>84.0 / 100</p>
@@ -737,23 +583,27 @@
                                 </div>
                                 <p>мультфильм, фантастика, комедия...</p>
                             </div>
-                            <div class="cartoon__card swiper-slide">
-                                <img
-                                    src="./img/cartoon-2.jpeg"
-                                    alt="Masha and the Bear"
-                                />
-                                <button class="like-btn">
+
+                            <div class="category__card swiper-slide">
+                                <div class="category__poster-box">
                                     <img
-                                        src="./img/like-logo.png"
-                                        alt="Like logo"
+                                        class="category__card-img"
+                                        src="./img/cartoon-2.jpeg"
+                                        alt="Маша и медведь"
                                     />
-                                </button>
+                                    <button class="category__like-btn">
+                                        <img
+                                            src="./img/icon-favorite.png"
+                                            alt="Like logo"
+                                        />
+                                    </button>
+                                </div>
                                 <p>Россия, 2009 - ...</p>
-                                <a href="#">Маша и медведь</a>
-                                <div class="cartoon__rating">
+                                <a href="#">Маша и Медведь</a>
+                                <div class="category__rating">
                                     <div class="rating1">
                                         <img
-                                            src="./img/rating-logo-1.jpeg"
+                                            src="./img/rating-logo-1.png"
                                             alt="IMDb"
                                         />
                                         <p>76.0 / 100</p>
@@ -768,20 +618,27 @@
                                 </div>
                                 <p>мультфильм, комедия</p>
                             </div>
-                            <div class="cartoon__card swiper-slide">
-                                <img src="./img/cartoon-3.jpeg" alt="Soul" />
-                                <button class="like-btn">
+
+                            <div class="category__card swiper-slide">
+                                <div class="category__poster-box">
                                     <img
-                                        src="./img/like-logo.png"
-                                        alt="Like logo"
+                                        class="category__card-img"
+                                        src="./img/cartoon-3.jpeg"
+                                        alt="Душа"
                                     />
-                                </button>
+                                    <button class="category__like-btn">
+                                        <img
+                                            src="./img/icon-favorite.png"
+                                            alt="Like logo"
+                                        />
+                                    </button>
+                                </div>
                                 <p>США, Япония, 2020</p>
                                 <a href="#">Душа</a>
-                                <div class="cartoon__rating">
+                                <div class="category__rating">
                                     <div class="rating1">
                                         <img
-                                            src="./img/rating-logo-1.jpeg"
+                                            src="./img/rating-logo-1.png"
                                             alt="IMDb"
                                         />
                                         <p>79.0 / 100</p>
@@ -796,23 +653,27 @@
                                 </div>
                                 <p>мультфильм, драма, приключения...</p>
                             </div>
-                            <div class="cartoon__card swiper-slide">
-                                <img
-                                    src="./img/cartoon-4.jpeg"
-                                    alt="Red Shoes and the Seven Dwarfs"
-                                />
-                                <button class="like-btn">
+
+                            <div class="category__card swiper-slide">
+                                <div class="category__poster-box">
                                     <img
-                                        src="./img/like-logo.png"
-                                        alt="Like logo"
+                                        class="category__card-img"
+                                        src="./img/cartoon-4.jpeg"
+                                        alt="Красные туфельки и семь гномов"
                                     />
-                                </button>
+                                    <button class="category__like-btn">
+                                        <img
+                                            src="./img/icon-favorite.png"
+                                            alt="Like logo"
+                                        />
+                                    </button>
+                                </div>
                                 <p>Корея Южная, 2019</p>
                                 <a href="#">Красные туфельки и семь гномов</a>
-                                <div class="cartoon__rating">
+                                <div class="category__rating">
                                     <div class="rating1">
                                         <img
-                                            src="./img/rating-logo-1.jpeg"
+                                            src="./img/rating-logo-1.png"
                                             alt="IMDb"
                                         />
                                         <p>61.0 / 100</p>
@@ -827,20 +688,27 @@
                                 </div>
                                 <p>мультфильм, фэнтези, комедия...</p>
                             </div>
-                            <div class="cartoon__card swiper-slide">
-                                <img src="./img/cartoon-1.jpeg" alt="Shrek" />
-                                <button class="like-btn">
+
+                            <div class="category__card swiper-slide">
+                                <div class="category__poster-box">
                                     <img
-                                        src="./img/like-logo.png"
-                                        alt="Like logo"
+                                        class="category__card-img"
+                                        src="./img/cartoon-1.jpeg"
+                                        alt="Шрэк"
                                     />
-                                </button>
+                                    <button class="category__like-btn">
+                                        <img
+                                            src="./img/icon-favorite.png"
+                                            alt="Like logo"
+                                        />
+                                    </button>
+                                </div>
                                 <p>США, 2001</p>
                                 <a href="#">Шрэк</a>
-                                <div class="cartoon__rating">
+                                <div class="category__rating">
                                     <div class="rating1">
                                         <img
-                                            src="./img/rating-logo-1.jpeg"
+                                            src="./img/rating-logo-1.png"
                                             alt="IMDb"
                                         />
                                         <p>84.0 / 100</p>
@@ -854,96 +722,6 @@
                                     </div>
                                 </div>
                                 <p>мультфильм, фантастика, комедия...</p>
-                            </div>
-                            <div class="cartoon__card swiper-slide">
-                                <img
-                                    src="./img/cartoon-2.jpeg"
-                                    alt="Masha and the Bear"
-                                />
-                                <button class="like-btn">
-                                    <img
-                                        src="./img/like-logo.png"
-                                        alt="Like logo"
-                                    />
-                                </button>
-                                <p>Россия, 2009 - ...</p>
-                                <a href="#">Маша и медведь</a>
-                                <div class="cartoon__rating">
-                                    <div class="rating1">
-                                        <img
-                                            src="./img/rating-logo-1.jpeg"
-                                            alt="IMDb"
-                                        />
-                                        <p>76.0 / 100</p>
-                                    </div>
-                                    <div class="rating2">
-                                        <img
-                                            src="./img/rating-logo-2.png"
-                                            alt="Kinopoisk"
-                                        />
-                                        <p>68 %</p>
-                                    </div>
-                                </div>
-                                <p>мультфильм, комедия</p>
-                            </div>
-                            <div class="cartoon__card swiper-slide">
-                                <img src="./img/cartoon-3.jpeg" alt="Soul" />
-                                <button class="like-btn">
-                                    <img
-                                        src="./img/like-logo.png"
-                                        alt="Like logo"
-                                    />
-                                </button>
-                                <p>США, Япония, 2020</p>
-                                <a href="#">Душа</a>
-                                <div class="cartoon__rating">
-                                    <div class="rating1">
-                                        <img
-                                            src="./img/rating-logo-1.jpeg"
-                                            alt="IMDb"
-                                        />
-                                        <p>79.0 / 100</p>
-                                    </div>
-                                    <div class="rating2">
-                                        <img
-                                            src="./img/rating-logo-2.png"
-                                            alt="Kinopoisk"
-                                        />
-                                        <p>71 %</p>
-                                    </div>
-                                </div>
-                                <p>мультфильм, драма, приключения...</p>
-                            </div>
-                            <div class="cartoon__card swiper-slide">
-                                <img
-                                    src="./img/cartoon-4.jpeg"
-                                    alt="Red Shoes and the Seven Dwarfs"
-                                />
-                                <button class="like-btn">
-                                    <img
-                                        src="./img/like-logo.png"
-                                        alt="Like logo"
-                                    />
-                                </button>
-                                <p>Корея Южная, 2019</p>
-                                <a href="#">Красные туфельки и семь гномов</a>
-                                <div class="cartoon__rating">
-                                    <div class="rating1">
-                                        <img
-                                            src="./img/rating-logo-1.jpeg"
-                                            alt="IMDb"
-                                        />
-                                        <p>61.0 / 100</p>
-                                    </div>
-                                    <div class="rating2">
-                                        <img
-                                            src="./img/rating-logo-2.png"
-                                            alt="Kinopoisk"
-                                        />
-                                        <p>46 %</p>
-                                    </div>
-                                </div>
-                                <p>мультфильм, фэнтези, комедия...</p>
                             </div>
                         </div>
                         <div class="swiper-button-prev"></div>
@@ -951,44 +729,55 @@
                     </div>
                 </section>
 
-                <section class="actor">
-                    <div class="actor__name-section">
+                <section class="category">
+                    <div class="category__name-section conteiner2">
                         <h2>Люди в кино</h2>
-                        <div class="actor__left-bar">
+                        <div class="category__left-bar">
                             <a href="#">Больше фильмов</a>
-                            <img src="./img/left-chevron.png" alt="More" />
+                            <img
+                                src="./img/icon-chevron-to-right.png"
+                                alt="More"
+                            />
                         </div>
                     </div>
 
-                    <div class="actor__cards swiper">
+                    <div class="category__cards swiper">
                         <div class="swiper-wrapper">
-                            <div class="actor__card swiper-slide">
+                            <div class="category__card swiper-slide">
                                 <img
                                     src="./img/actor-1.jpeg"
-                                    alt="Alexander Bashirov"
+                                    alt="Александр Баширов"
                                 />
                                 <a href="#">Александр Баширов</a>
                             </div>
 
-                            <div class="actor__card swiper-slide">
-                                <img src="./img/actor-2.jpeg" alt="Brad Pitt" />
+                            <div class="category__card swiper-slide">
+                                <img src="./img/actor-2.jpeg" alt="Брэд Питт" />
                                 <a href="#">Брэд Питт</a>
                             </div>
 
-                            <div class="actor__card swiper-slide">
+                            <div class="category__card swiper-slide">
                                 <img
                                     src="./img/actor-3.jpeg"
-                                    alt="Quentin Tarantino"
+                                    alt="Квентин Тарантино"
                                 />
                                 <a href="#">Квентин Тарантино</a>
                             </div>
 
-                            <div class="actor__card swiper-slide">
+                            <div class="category__card swiper-slide">
                                 <img
                                     src="./img/actor-4.jpeg"
-                                    alt="Alexander Petrov"
+                                    alt="Александр Петров"
                                 />
                                 <a href="#">Александр Петров</a>
+                            </div>
+
+                            <div class="category__card swiper-slide">
+                                <img
+                                    src="./img/actor-1.jpeg"
+                                    alt="Александр Баширов"
+                                />
+                                <a href="#">Александр Баширов</a>
                             </div>
                         </div>
                         <div class="swiper-button-prev"></div>
@@ -1000,15 +789,13 @@
             <footer class="footer">
                 <nav class="logo">
                     <a href="https://vk.com/" target="_blank"
-                        ><img src="./img/footer-vk-logo.png" alt="VK"
+                        ><img src="./img/footer-vk.png" alt="VK"
                     /></a>
                     <a href="https://www.youtube.com/" target="_blank"
-                        ><img src="./img/footer-youtube-logo.svg" alt="YouTube"
+                        ><img src="./img/footer-youtube.png" alt="YouTube"
                     /></a>
                     <a href="https://web.telegram.org/" target="_blank"
-                        ><img
-                            src="./img/footer-telegramm-logo.svg"
-                            alt="Telegramm"
+                        ><img src="./img/footer-telegramm.png" alt="Telegramm"
                     /></a>
                 </nav>
                 <nav class="links">
@@ -1020,12 +807,11 @@
                     <p>© 2023 Xpage</p>
                 </nav>
             </footer>
-            <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-            <script src="./script.js"></script>
+
             <div id="popup" class="popup">
                 <div class="popup__body">
                     <div class="popup__content">
-                        <a href="#1" class="popup__close close-popup">X</a>
+                        <!-- <a href="#1" class="popup__close close-popup">X</a> -->
                         <video
                             src="./video/video-1.mp4"
                             controls="controls"
@@ -1034,5 +820,7 @@
                 </div>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="./script.js"></script>
     </body>
 </html>
