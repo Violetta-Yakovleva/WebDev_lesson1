@@ -598,7 +598,8 @@ button[type="submit"] {
 }
 @keyframes ldio-po1ui9ltu3-r {
     0% {
-        transform: translate(148px, 80px) scale(1): }
+        transform: translate(148px, 80px) scale(1);
+    }
     100% {
         transform: translate(148px, 80px) scale(0);
     }
